@@ -1,0 +1,35 @@
+### model
+model_name_or_path: Qwen/Qwen2-VL-2B-Instruct
+adapter_name_or_path: saves/Qwen2-VL-2B-Instruct/lora/train_2024-12-10-11-17-18/checkpoint-375 #修改为训练后的checkpoint
+model_revision: master
+
+### method
+stage: sft
+do_train: false
+do_predict: true
+predict_with_generate: true
+# finetuning_type: full
+
+### dataset
+eval_dataset: mire_test1  #修改为测试集
+template: qwen2_vl
+cutoff_len: 4096
+max_samples: 10000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+
+### output
+output_dir: saves/Qwen2-VL-2B-Instruct/lora/eval_2024-12-10-15-07-28 #修改为保存地址
+logging_steps: 1
+overwrite_output_dir: true
+
+
+### eval
+per_device_eval_batch_size: 4
+
+### generation
+max_new_tokens: 100
+temperature: 0.1
+top_k: 1
+

@@ -1,0 +1,10 @@
+.cache/
+.vscode/
+test1/
+cache/
+
+.download.json
+submit.csv
+
+LLaMA-Factory/data/mire/train/images/*
+LLaMA-Factory/data/mire/test1/images/*
